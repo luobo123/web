@@ -1,0 +1,148 @@
+<!--[if lt IE 9]>
+<script src="${plugins}/respond.min.js" type="text/javascript"></script>
+<script src="${plugins}/excanvas.min.js" type="text/javascript"></script>
+<![endif]-->
+<!-- BEGIN CORE PLUGINS -->
+<script src="${plugins}/jquery.min.js"></script>
+<script src="${plugins}/bootstrap/js/bootstrap.min.js"></script>
+<script src="${plugins}/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+<script src="${plugins}/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="${plugins}/jquery.blockui.min.js"></script>
+<script src="${plugins}/uniform/jquery.uniform.min.js"></script>
+<script src="${plugins}/jquery-notific8/jquery.notific8.min.js"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<#list str.split(pluginArray,',') as p>
+		<#if p=='moment'>
+			<script type="text/javascript" src="${plugins}/moment.min.js"></script>
+		<#elseif p=='daterangepicker'>
+			<script type="text/javascript" src="${plugins}/bootstrap-daterangepicker/daterangepicker.min.js"></script>			
+		<#elseif p=='datepicker'>
+			<script type="text/javascript" src="${plugins}/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+                        <script type="text/javascript" src="${plugins}/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+		<#elseif p=='timepicker'>
+			<script type="text/javascript" src="${plugins}/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+		<#elseif p=='datetimepicker'>
+			<script type="text/javascript" src="${plugins}/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+                        <script type="text/javascript" src="${plugins}/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+		<#elseif p=='clockface'>
+			<script type="text/javascript" src="${plugins}/clockface/js/clockface.js"></script>
+		<#elseif p=='morris'>
+			<script type="text/javascript" src="${plugins}/morris/morris.min.js"></script>
+			<script type="text/javascript" src="${plugins}/morris/raphael-min.js"></script>
+		<#elseif p=='waypoints'>
+			<script type="text/javascript" src="${plugins}/counterup/jquery.waypoints.min.js"></script>
+		<#elseif p=='counterup'>
+			<script type="text/javascript" src="${plugins}/counterup/jquery.counterup.min.js"></script>
+		<#elseif p=='fullcalendar'>
+			<script type="text/javascript" src="${plugins}/fullcalendar/fullcalendar.min.js"></script>
+		<#elseif p=='easypiechart'>
+			<script type="text/javascript" src="${plugins}/jquery-easypiechart/jquery.easypiechart.min.js"></script>
+		<#elseif p=='sparkline'>
+			<script type="text/javascript" src="${plugins}/jquery.sparkline.min.js"></script>
+		<#elseif p=='select2'>
+			<script type="text/javascript" src="${plugins}/select2/js/select2.full.min.js"></script>
+			<script type="text/javascript" src="${plugins}/select2/js/i18n/zh-CN.js"></script>
+		<#elseif p=='jstree'>
+			<script type="text/javascript" src="${plugins}/jstree/dist/jstree.min.js"></script>
+			<script type="text/javascript" src="${js}/common/extend/jstree.extend.js"></script>
+		<#elseif p=='summernote'>
+			<script type="text/javascript" src="${plugins}/bootstrap-summernote/summernote.min.js"></script>
+		<#elseif p=='markdown'>
+			<script type="text/javascript" src="${plugins}/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+		<#elseif p=='treetable'>
+			<script type="text/javascript" src="${plugins}/treetable/jquery.treetable.js"></script>
+			<script type="text/javascript" src="${js}/common/extend/treetable.extend.js"></script>
+		</#if>
+	
+</#list>
+<#if str.contains(pluginArray,'amcharts')>
+	<script type="text/javascript" src="${plugins}/amcharts/amcharts/amcharts.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/amcharts/serial.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/amcharts/pie.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/amcharts/radar.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/amcharts/themes/light.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/ammap/ammap.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/ammap/maps/js/worldLow.js"></script>
+	<script type="text/javascript" src="${plugins}/amcharts/amstockcharts/amstock.js"></script>
+</#if>
+
+<#if str.contains(pluginArray,'flot')>
+	<script type="text/javascript" src="${plugins}/flot/jquery.flot.min.js"></script>
+	<script type="text/javascript" src="${plugins}/flot/jquery.flot.resize.min.js"></script>
+	<script type="text/javascript" src="${plugins}/flot/jquery.flot.categories.min.js"></script>
+</#if>
+
+<#if str.contains(pluginArray,'daterangepicker')>
+	<script src="${js}/common/dateRangePicker.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'datatables')>
+	<#--
+	<script src="${assets}/global/scripts/datatable.js" type="text/javascript"></script>
+	<script src="${plugins}/datatables/datatables.min.js" type="text/javascript"></script>
+	<script src="${plugins}/colResizable/dataTables.colResize.js" type="text/javascript"></script>
+	-->
+	<script src="${plugins}/colResizable/colResizable-1.6.js" type="text/javascript"></script>
+	<script src="${plugins}/datatables/datatables.js" type="text/javascript"></script>
+	
+<!-- 	<script src="${plugins}/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script> -->
+	<script src="${js}/common/extend/datatables.extend.js" type="text/javascript" ></script>
+</#if>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="${assets}/global/scripts/app.min.js" type="text/javascript"></script>
+<script src="${js}/common/extend/app.extend.js" type="text/javascript"></script>
+<script src="${js}/common/menu.js" type="text/javascript"></script>
+
+<#if str.contains(pluginArray,'select2')>
+	<script src="${js}/common/extend/select2.extend.js" type="text/javascript" ></script>
+</#if>
+<#if str.contains(pluginArray,'dropdownlist')>
+	<script src="${plugins}/dropdown/js/dropdownlist.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'syntaxhighlighter')>
+	<script src="${plugins}/syntaxhighlighter/scripts/shCore.js" type="text/javascript"></script>
+	<script src="${plugins}/syntaxhighlighter/scripts/shBrushJScript.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'echarts')>
+	<script src="${plugins}/echarts/echarts.min.js" type="text/javascript"></script>
+	<script src="${js}/common/extend/echarts.extend.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'jquery-file-upload')>
+	<script src="${plugins}/jquery-file-upload/js/vendor/jquery.ui.widget.js" type="text/javascript"></script>
+	<script src="${plugins}/jquery-file-upload/js/jquery.fileupload.js" type="text/javascript"></script>
+	<script src="${plugins}/jquery-file-upload/js/vendor/load-image.min.js" type="text/javascript"></script>
+	<script src="${plugins}/jquery-file-upload/js/jquery.fileupload-ui.js" type="text/javascript"></script>
+</#if>
+<!-- END THEME GLOBAL SCRIPTS -->
+<script src="${assets}/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<#if str.contains(pluginArray,'ArrayList')>
+	<script src="${js}/common/ArrayList.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'StringUtils')>
+	<script src="${js}/common/StringUtils.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'Map')>
+	<script src="${js}/common/Map.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'bootbox')>
+	<script src="${plugins}/bootbox/bootbox.min.js" type="text/javascript"></script>
+</#if>
+<#if str.contains(pluginArray,'freemarker')>
+	<script src="${plugins}/codemirror-freemarker/lib/codemirror.js"></script>
+	<script src="${plugins}/codemirror-freemarker/mode/xml/xml.js"></script>
+	<script src="${plugins}/codemirror-freemarker/mode/javascript/javascript.js"></script>
+	<script src="${plugins}/codemirror-freemarker/mode/css/css.js"></script>
+	<script src="${plugins}/codemirror-freemarker/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="${plugins}/codemirror-freemarker/mode/freemarker/freemarker.js"></script>
+	<script src="${plugins}/codemirror-freemarker/mode/freemarkermixed/freemarkermixed.js"></script>
+</#if>
+<script type="text/javascript" src="${plugins}/jquery-validation/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${plugins}/jquery-validation/js/additional-methods.min.js"></script>
+<script type="text/javascript" src="${js}/common/extend/form.extend.js"></script>
+<script type="text/javascript" src="${js}/common/http.js"></script>
+<script type="text/javascript" src="${js}/common/regexp.js"></script>
+<script type="text/javascript" src="${js}/global.js"></script>
+<script type="text/javascript" src="${js}/dictionary.js"></script>
+<script type="text/javascript" src="${js}/rule.js"></script>
+<script type="text/javascript" src="${js}/admin/user/modify_password.js"></script>

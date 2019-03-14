@@ -1,0 +1,38 @@
+<div class="modal fade small-modal" id="role_modal" role="basic" aria-hidden="true" style="display: none;top:49px;" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="role_modal_title">新增角色</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" id="role_modal_frm">
+                    <div class="form-body">
+                        <input id="role_id_m" name="id" type="hidden" />
+					 	<input id="org_id_m" name="orgId" type="hidden" />
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="control-label">角色名称<span class="required">*</span></label>
+                                <div>
+                                     <input type="text" class="form-control" name="roleName" id="role_name_m" maxlength="50" value="" placeholder="请输入角色名">
+                                </div>
+							</div>
+						 </div>
+						 <div class="form-group">
+							<div class="form-igroup">
+								<label class="control-label">描&emsp;述</label>
+                                <div>
+                                    <textarea class="form-control" name="description" id="description_m" rows="3" maxlength="200" id="description"></textarea>
+                                </div>
+							</div>
+						 </div>
+                        <div class="modal-footer">
+							<button id="btn_save" type="button" class="btn blue">保    存</button>
+							<button id="btn_edit" type="button" class="btn blue">保    存</button>
+							<button id="btn_cancel" type="button" class="btn default">取    消</button>
+						</div>
+					</div>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>

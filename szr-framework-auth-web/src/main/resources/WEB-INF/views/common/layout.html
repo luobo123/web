@@ -1,0 +1,64 @@
+<#macro layout pluginArray title subTitle extraJs modelPage>
+	<#compress>
+		<#include "/common/header.html"/>
+		<body class="page-header-fixed page-header-fixed-mobile page-footer-fixed page-footer-fixed-mobile page-sidebar-closed-hide-logo page-content-white">
+        <!-- BEGIN HEADER -->
+        <#include "/common/page-header-navbar.html" />
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- BEGIN SIDEBAR -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <#include "/common/siderbar-menu.html" />
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                	<!-- BEGIN PAGE HEADER-->
+                	<!-- BEGIN PAGE BAR -->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="${ctx}">${title}</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <#if subTitle??>
+	                            <li>
+	                                <span>${subTitle}</span>
+	                            </li>
+                            </#if>
+                        </ul>
+                        <#include "/common/page-toolbar.html" />
+                    </div>
+                    <!-- END PAGE BAR -->
+                    <h3 class="page-title"></h3>
+                    <!-- END PAGE HEADER-->
+                    <!-- BEGIN PAGE BASE CONTENT -->
+                    <#nested />
+                    <!-- END PAGE BASE CONTENT -->
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <#include "/admin/user/modify_password.html" />
+        <#include "/common/footer.html" />
+        <#include "/common/plugins.html" />
+        <#if extraJs?? && str.trimToEmpty(extraJs)?length gt 0>
+        	<#list str.split(extraJs,",") as path>
+	        	<script src="${path}" type="text/javascript"></script>        		
+        	</#list>
+        </#if>
+    	</body>
+	</html>
+	</#compress>
+</#macro>

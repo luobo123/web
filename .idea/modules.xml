@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/szr-framework-auth-core/szr-framework-auth-core.iml" filepath="$PROJECT_DIR$/szr-framework-auth-core/szr-framework-auth-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/szr-framework-auth-model/szr-framework-auth-model.iml" filepath="$PROJECT_DIR$/szr-framework-auth-model/szr-framework-auth-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/szr-framework-auth-parent.iml" filepath="$PROJECT_DIR$/szr-framework-auth-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/szr-framework-auth-web/szr-framework-auth-web.iml" filepath="$PROJECT_DIR$/szr-framework-auth-web/szr-framework-auth-web.iml" />
+    </modules>
+  </component>
+</project>

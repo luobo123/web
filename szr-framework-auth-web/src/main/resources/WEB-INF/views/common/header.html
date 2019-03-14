@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8" />
+<#include "/common/base_js.html" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title><@contextParam 'sysName' /></title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="${plugins}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="${plugins}/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+<link href="${plugins}/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="${plugins}/jquery-notific8/jquery.notific8.min.css" rel="stylesheet" type="text/css" />
+
+<#if str.contains(pluginArray,'bootstrap-switch')>
+	<link href="${plugins}/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'bootstrap-wysihtml5')>
+	<link href="${plugins}/bootstrap-wysihtml5/bootstrap-wysihtml5.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'clockface')>
+	<link href="${plugins}/clockface/css/clockface.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'morris')>
+	<link href="${plugins}/morris/morris.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'fullcalendar')>
+	<link href="${plugins}/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'jqvmap')>
+	<link href="${plugins}/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'codemirror')>
+	<link href="${plugins}/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css" />
+	<link href="${plugins}/codemirror/theme/neat.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'select2')>
+	<link href="${plugins}/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+	<link href="${plugins}/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'datatables')>
+	<link href="${plugins}/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
+	<link href="${plugins}/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'summernote')>
+	<link href="${plugins}/bootstrap-summernote/summernote.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'markdown')>
+	<link href="${plugins}/bootstrap-markdown/css/bootstrap-markdown.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'datepicker')>
+	<link href="${plugins}/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'datetimepicker')>
+	<link href="${plugins}/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'daterangepicker')>
+	<link href="${plugins}/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+</#if>
+
+<#if str.contains(pluginArray,'treetable')>
+	<link href="${plugins}/treetable/css/jquery.treetable.css" rel="stylesheet" type="text/css" />
+</#if>
+
+
+<link href="${assets}/global/css/components-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+<link href="${assets}/global/css/plugins-md.min.css" rel="stylesheet" id="style_components" type="text/css" />
+
+<link href="${assets}/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
+<link href="${assets}/layouts/layout/css/themes/grey.min.css" rel="stylesheet" type="text/css" id="style_color" />
+
+<#if str.contains(pluginArray,'jstree')>
+	<link href="${plugins}/jstree/dist/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+</#if>
+<#if str.contains(pluginArray,'dropdownlist')>
+	<link href="${plugins}/dropdown/dropdownlist.css" rel="stylesheet" type="text/css" />
+</#if>
+<#if str.contains(pluginArray,'syntaxhighlighter')>
+	<link href="${plugins}/syntaxhighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+	<link href="${plugins}/syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+</#if>
+<#if str.contains(pluginArray,'jquery-file-upload')>
+	<link href="${plugins}/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+	<link href="${plugins}/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
+</#if>
+<#if str.contains(pluginArray,'freemarker')>
+	<link rel="stylesheet" href="${plugins}/codemirror-freemarker/lib/codemirror.css" />
+</#if>
+<link href="${css}/common.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="${img}/icon/favicon.ico">

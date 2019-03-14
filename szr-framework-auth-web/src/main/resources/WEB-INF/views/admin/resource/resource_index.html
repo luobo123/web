@@ -1,0 +1,23 @@
+<#assign pluginArray="jstree,select2,treetable,validation,StringUtils,ArrayList,Map,bootbox" />
+<#assign title="首页" />
+<#assign subTitle="资源管理" />
+<#assign extraJs="${js}/admin/resource/resource_index.js" />
+<@layout pluginArray="${pluginArray}" title="${title}" subTitle="${subTitle}" extraJs="${extraJs}">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="portlet light bordered">
+				<div class="portlet-body">
+					<div class="actions">
+						<button type="button" class="dt-button btn green btn-sm fa fa-plus" onclick="javascript:resourceHandler.btnOperation().btnAdd();">添加</button>
+						<button type="button" class="dt-button btn green btn-sm fa fa-edit" onclick="javascript:resourceHandler.btnOperation().btnEdit();">修改</button>
+						<button type="button" class="dt-button btn green btn-sm fa fa-remove" onclick="javascript:resourceHandler.btnOperation().btnDelete();">删除</button>
+					</div>
+					<div class="table-scrollable">
+						<table id="treetable" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" role="grid"></table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<#include "/admin/resource/resource_modal.html" />
+</@layout>

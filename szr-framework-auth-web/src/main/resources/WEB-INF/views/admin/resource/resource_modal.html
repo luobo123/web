@@ -1,0 +1,134 @@
+<div id="modal" class="modal fade" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="modal-title">添加资源</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" id="frm">
+                                <div class="form-body">
+                                	<div class="alert alert-danger display-hide">
+                                        <button class="close" data-close="alert"></button><span id="alert-msg">输入错误，请检查</span> 
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">资源名
+                                        	<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                        	<div class="input-icon right">
+                                                <i class="fa"></i>
+                                            	<input type="text" class="form-control" name="name" placeholder="请输入资源名称" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">代&emsp;码
+                                        	<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                        	<div class="input-icon right">
+                                                <i class="fa"></i>
+                                        		<input type="text" class="form-control" name="code" placeholder="请输入代码" />
+                                        	 </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">地&emsp;址
+                                        </label>
+                                        <div class="col-md-9">
+                                       		<div class="input-icon right">
+                                                <i class="fa"></i>
+                                        		<input type="text" class="form-control" name="url" placeholder="请输入地址" />
+                                        	</div> 
+                                        </div>
+                                    </div>
+			                        
+                                    <div class="form-group">
+		                          		<label class="col-md-3 control-label">图&emsp;标</label>
+		                              	<div class="col-md-9" >
+		                              		<div class="input-icon right">
+		                              			<i id="resource-icon" style="left:0px!important;" class=""></i>
+		                              			<input type="text" id="icon_m" style="background-color:#ffffff;padding-left:30px;" class="form-control" placeholder="请选择图标" readonly="readonly"/>
+		                 						
+		                 						<input type="hidden" name='icon' id='iconId' value="" />
+		                 					</div>
+		                          		</div>
+		                		  </div>
+		                          <div class="form-group" style="margin-top:-15px;">
+		                          		<label class="control-label col-md-3"></label>
+		                          		<div class="col-md-9">
+		                 		  			<div id="tree_icon" class="tree-demo resource_tree_menu hide"></div>
+		                 				</div>
+		                		  </div>
+                                    <div class="form-group">
+                                        <label class="col-md-3 control-label">序&emsp;号
+                                        	<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-9">
+                                        	<div class="input-icon right">
+                                                <i class="fa"></i>
+                                        		<input type="text" class="form-control" name="seq" placeholder="请输入序号" value="0"
+                                        		onkeyup= "this.value=this.value.replace(/[^\d]/g,'');" /> 
+                                        	</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-sm-3 control-label">类&emsp;型
+                                        	<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-3 col-sm-3">
+                                        	<select id="type_m" name="type" class="form-control select2">
+                                        		<#list resourceTypeEnum?values as type>
+                                        			<option value="${type.name()}">${type.getValue()}</option>
+                                        		</#list>
+                                        	</select>
+                                        </div>
+                                        
+                                        
+                                        <label class="col-md-2 col-sm-2 control-label" style="padding-right:0px;">最后一级</label>
+                              <div class="col-md-4 col-sm-4" style="padding-left:0px;">
+                              	<label class="radio-inline">
+                                  	<input type="radio" name="lastLevel" value="1" checked="checked">是
+                                  </label>
+                                  <label class="radio-inline">
+                                  	<input type="radio" name="lastLevel" value="0">否
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-md-3 control-label">描&emsp;述
+                              	&nbsp;
+                              </label>
+                              <div class="col-md-9">
+                                  <textarea class="form-control" rows="3" name="description"></textarea>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                          		<label class="col-md-3 control-label">父节点</label>
+                              	<div class="col-md-9" >
+                              		<div class="input-icon right">
+                                      	<i id="parent-del" class="fa font-red"></i>
+                              			<input type="text" id="parentName" class="form-control" placeholder="请选择父节点" readonly="readonly"/>
+                 						<input type="hidden" name='parentId' id='parentId' value="" />
+                 					</div>
+                          		</div>
+                		  </div>
+                          <div class="form-group" style="margin-top:-15px;">
+                          		<label class="control-label col-md-3"></label>
+                          		<div class="col-md-9">
+                 		  			<div id="tree_resource" class="tree-demo resource_tree_menu hide"></div>
+                 				</div>
+                		  </div>
+                  	  </div> 
+                 </form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn green" id="btn-save">保存</button>
+				<button type="button" class="btn green" id="btn-edit">修改</button>
+				<button type="button" class="btn dark btn-outline" id='btn-cancel'>取消</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<script type="text/javascript">
+var buttons=[
+<@shiro.authenticated>
+		<@shiro.hasPermission name=currentResource.code>
+			<#assign children=currentResource.children />
+			<#if children?? && children?size gt 0>
+				<#list children?sort_by("seq") as sub>
+					<@shiro.hasPermission name=sub.code>
+					{text:'${sub.name}',className:'${sub.icon}',action:${sub.url}}<#sep>,</#sep>
+					</@shiro.hasPermission>
+				</#list>
+			</#if>
+		</@shiro.hasPermission>
+</@shiro.authenticated>
+];
+</script>

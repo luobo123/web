@@ -1,0 +1,41 @@
+<div class="top-menu">
+	<ul class="nav navbar-nav pull-right">
+		<!-- <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+			<a href="${ctx}/user/messageuser/index" class="dropdown-toggle" >
+				<i class="icon-bell"></i>
+				<span class="badge badge-default" id="messageNum"></span>
+			</a>
+			<ul class="dropdown-menu hide"></ul>
+		</li> -->
+		<li class="dropdown dropdown-user">
+			<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+				<span class="username username-hide-on-mobile">${user.username} </span> <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used --> 
+				<img alt="" class="img-circle" src="${assets}/layouts/layout/img/avatar.png" />
+			</a>
+			<ul class="dropdown-menu dropdown-menu-default">
+				<li class="divider"></li>
+				<li>
+					<a>
+						<i class="icon-user"></i>${user.userName}
+					</a>
+				</li>
+				<li>
+					<a>
+						<i class="icon-social-dribbble"></i>${user.companyName}
+					</a>
+				</li>
+				<li class="divider"></li>
+				<li>
+					<a id="change-user-pwd" >
+						<i class="icon-key"></i> 修改密码
+					</a>
+				</li>
+				<li>
+					<a href="${ctx}/logout">
+						<i class="icon-logout"></i> 退出
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>

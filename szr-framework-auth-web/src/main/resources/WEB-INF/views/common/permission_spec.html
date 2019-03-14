@@ -1,0 +1,7 @@
+<#if currentResource??>
+	<#list currentResource?sort_by("seq") as sub>
+		<#if '${sub.type}'=='OPERATION'>
+			<button type="button" class="dt-button btn green btn-sm ${sub.icon}" onclick="javascript:${sub.url};">${sub.name}</button>
+		</#if>
+	</#list>
+</#if>

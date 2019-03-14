@@ -1,0 +1,64 @@
+<div class="modal fade small-modal" id="company_modal" role="basic" aria-hidden="true" style="display: none;" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="company_modal_title">新增公司</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal" role="form" id="company_modal_frm">
+					<input id="company_id_m" name="id" type="text" hidden=true>
+					<input id="company_used_m" name="id" type="text" hidden=true value="false">
+					<div class="form-body">
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="control-label">公司名称<span class="required">*</span></label>
+								<div>
+									<input id="company_name_m" name="companyName" class="form-control" type="text" placeholder="公司名称" type="text" maxlength="255">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="control-label">公司编码<span class="required">*</span></label>
+								<div>
+									<input id="company_code_m" name="companyCode" class="form-control date-picker" data-date-format="yyyy-mm-dd" placeholder="公司编码" size="16" type="text"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="control-label">是否有效</label>
+								<div>
+									<select id="enabled_m" name="enabled" class="form-control">
+			                            <option value="true">是</option>
+			                            <option value="false">否</option>
+			                        </select>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="control-label">公司地址</label>
+								<div>
+									<input id="company_address_m" name="companyAddress" class="form-control date-picker" data-date-format="yyyy-mm-dd" placeholder="公司地址" size="16" type="text"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="col-l-3 control-label">备     注</label>
+								<div>
+									<textarea id="description_m" name="description" class="form-control" placeholder="备     注" maxlength="1000"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button id="btn_save" type="button" class="btn blue">保    存</button>
+						<button id="btn_cancel" type="button" class="btn default">取    消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+ 	</div>
+ </div>

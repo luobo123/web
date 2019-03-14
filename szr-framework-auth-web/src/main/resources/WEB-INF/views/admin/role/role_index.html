@@ -1,0 +1,71 @@
+<#assign pluginArray="select2,datatables,jstree,validation,ArrayList,bootbox" />
+<#assign title="首页" />
+<#assign subTitle="角色管理" />
+<#assign extraJs="${js}/admin/role/role_index.js,${js}/admin/role/role_operation.js" />
+<#assign modelPage="" />
+<@layout pluginArray="${pluginArray}" title="${title}" subTitle="${subTitle}" extraJs="${extraJs}" modelPage="${modelPage}">
+<div class="row">
+	<div class="col-md-12">
+		<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		<div class="portlet light bordered">
+			<div class="portlet-body">
+				<div class="row">
+					<div class="col-md-8" style="padding-right:0px;">
+						<form class="form-horizontal" role="form" id="role_frm">
+							<div class="form-body">
+								<div class="form-group">
+									<div class="form-igroup">
+										<label class="col-md-2 control-label">角色名称</label>
+										<div class="col-md-4">
+											<input id="role_name_s" class="form-control" type="text" placeholder="角色名称" maxlength="255">
+										</div>
+									</div>
+									<div class="form-igroup">
+									
+										<div class="col-md-6" style="text-align: center;">
+												<button type="button" class="dt-button btn btn-sm green fa fa-search" id="btn_search">
+													查询
+												</button>
+												<button type="button" class="dt-button btn btn-sm green fa fa-refresh" id="btn_reset">
+													重置
+												</button>
+											</div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="portlet light bordered">
+							<div class="portlet-title">角色信息</div>
+							<div class="portlet-body"  style="min-height:410px">
+								<div class="actions" style="float:right;">
+									<button type="button" class="dt-button btn green btn-sm fa fa-plus" onclick="javascript:roleHandler.btnOperation().btnAdd();">添加</button>
+									<button type="button" class="dt-button btn green btn-sm fa fa-edit" onclick="javascript:roleHandler.btnOperation().btnEdit();">修改</button>
+									<button type="button" class="dt-button btn green btn-sm fa fa-remove" onclick="javascript:roleHandler.btnOperation().btnDel();">删除</button>
+									<button type="button" class="dt-button btn green btn-sm fa fa-check-circle-o" onclick="javascript:roleHandler.btnOperation().btnAuth();">授权</button>
+								</div>
+								<table class="table table-striped table-bordered table-hover table-responsive" id="role_databable"></table>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="portlet light bordered">
+							<div class="portlet-title">资源列表</div>
+							<div class="portlet-body" style="min-height:410px">
+								<div class="row">
+									<div class="col-md-12 col-sm-12 col-xs-12 resource_tree_table">
+										<div id="resource_tree" class="hide"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END EXAMPLE TABLE PORTLET-->
+	</div>
+</div>
+<!-- END PAGE BASE CONTENT -->
+<#include "/admin/role/role_modal.html" />
+<#include "/common/modal-del.html" />
+</@layout>

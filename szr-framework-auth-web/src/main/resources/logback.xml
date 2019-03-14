@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="true" packagingData="true">
+	
+	<include resource="config/logback/logback-base.xml" />
+
+	<logger name="ch.qos.logback.classic" level="INFO" />
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.aop" level="INFO"/>
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor" level="INFO"/>
+    
+    <logger name="org.apache.commons" level="INFO"/>
+    <logger name="freemarker" level="WARN" />
+    <logger name="com.alibaba.druid.filter" level="WARN" />
+    <logger name="org.eclipse" level="WARN" />
+    <logger name="org.apache.http" level="WARN" />
+    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="INFO" />
+    <logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="INFO" />
+    <logger name="org.hibernate.engine.spi.QueryParameters" level="INFO" />
+    <logger name="org.hibernate.engine.query.spi.HQLQueryPlan" level="INFO" />
+    <logger name="org.dozer" level="WARN"/>
+    <logger name="org.apache.shiro" level="INFO"/>
+    <logger name="org.reflections" level="WARN"/>
+    <logger name="org.jeesys" level="INFO" />
+    <logger name="com.zsf" level="INFO" />
+    <root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="SUM-OUT" />
+	</root>
+</configuration>

@@ -1,0 +1,135 @@
+<#assign pluginArray="jstree,morris,validation,ArrayList,bootbox" />
+<#assign title="首页" />
+<#assign subTitle="机构管理" />
+<#assign extraJs="${js}/admin/org/org_index.js,${js}/admin/org/org_operation.js" />
+<@layout pluginArray="${pluginArray}" title="${title}" subTitle="${subTitle}" extraJs="${extraJs}">
+<div class="row">
+	<div class="col-md-12">
+		<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		<div class="portlet light bordered">
+			<div class="portlet-body" style="padding-top:5px;">
+				<div class="row">
+					<div class="col-md-4" style="padding-right:0px;">
+						<div class="portlet light bordered">
+							<div class="portlet-title">机构信息</div>
+							<div class="portlet-body" style="min-height:410px">
+								<div class="resource_tree_table">
+									<div id="org_tree"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="portlet light bordered">
+							<div class="portlet-title">机构信息</div>
+							<div class="portlet-body"  style="min-height:395px">
+								<div class="actions">
+									<button type="button" class="dt-button btn green btn-sm fa fa-plus" onclick="javascript:orgHandler.btnOperation().btnAdd();">添加</button>
+									<button type="button" class="dt-button btn green btn-sm fa fa-edit" onclick="javascript:orgHandler.btnOperation().btnSave();">保存</button>
+									<button type="button" class="dt-button btn green btn-sm fa fa-remove" onclick="javascript:orgHandler.btnOperation().btnDel();">删除</button>
+								</div>
+								<form class="form-horizontal" role="form" id="org_frm">
+                                   <div class="form-body">
+                                   		<div class="form-group">
+	                                    	<input type="hidden" name="id" id="orgId" />
+											<input type="hidden" name="parentId" id="parentId" />
+                                       </div>
+                                       <div class="form-group">
+                                       		<div class="form-igroup">
+	                                       		<label class="col-md-2 control-label">上级机构</label>
+	                                         	<div class="col-md-4">
+	                                         		<div class="input-icon right">
+	                                             	   	<input type="text" class="form-control" name="parentName" id="parentName" value="" readonly>
+	                                           		</div>
+	                                            </div>
+	                                        </div>
+                                            <div class="form-igroup">
+                                           		<label class="col-md-2 control-label">机构名称<span class="required">*</span>
+                                           		</label>
+                                           		<div class="col-md-4">
+                                           	   		<div class="input-icon right">
+                                               	   		<input type="text" class="form-control" name="orgName" id="orgName" maxlength="50" value="" placeholder="请输入机构名称">
+                                               		</div>
+                                               	</div>
+                                           	</div>
+                                       </div>
+                                       <div class="form-group">
+                                           	<div class="form-igroup">
+                                           		<label class="col-md-2 control-label">机构编码<span class="required">*</span>
+		                                        </label>
+		                                        <div class="col-md-4">
+		                                           	<div class="input-icon right">
+		                                               	<input type="text" class="form-control" name="orgCode" id="orgCode" maxlength="50" value="" placeholder="请输入机构编码">
+		                                            </div>
+		                                         </div>
+                                           	</div>
+                                           	<div class="form-igroup">
+                                       			<label class="col-md-2 col-sm-2 control-label">类&emsp;&emsp;型<span class="required">*</span>
+	                                           	</label>
+	                                           	<div class="col-md-4 col-sm-4">
+	                                           		<select name="orgType" id="orgType" class="form-control select2">
+	                                           			<#list orgTypeEnum?values as orgType>
+														<option value="${orgType.name()}">${orgType.getValue()}</option>
+	                                                	</#list>
+	                                           		</select>
+	                                           	</div>
+                                       		</div>
+                                       </div>
+                                       <div class="form-group">
+                                       		<div class="form-igroup">
+                                       			<label class="col-md-2 col-sm-2 control-label">机构地址</label>
+	                                            <div class="col-md-4 col-sm-4">
+	                                           	 	<div class="input-icon right">
+	                                               		<input type="text" class="form-control" name="orgAddress" id="orgAddress" maxlength="200" value="" placeholder="请输入机构地址">
+	                                               	</div>
+	                                            </div>
+                                       		</div>
+                                       		<div class="form-igroup">
+                                       			<label class="col-md-2 col-sm-2 control-label">联&nbsp;系&nbsp;人</label>
+	                                           <div class="col-md-4 col-sm-4">
+	                                           		<div class="input-icon right">
+	                                               		<input type="text" class="form-control" name="contactName" id="contactName" maxlength="20" value="" placeholder="请输入联系人">
+	                                               	</div>
+	                                           </div>
+                                       		</div>
+                                       </div>
+                                       <div class="form-group">
+                                       		<div class="form-igroup">
+                                       			<label class="col-md-2 col-sm-2 control-label">联系电话</label>
+	                                           <div class="col-md-4 col-sm-4">
+	                                           		<div class="input-icon right">
+	                                               		<input type="text" class="form-control" name="contactPhone" id="contactPhone" maxlength="20" value="" placeholder="请输入机构电话">
+	                                              	 </div>
+	                                           </div>
+                                       		</div>
+                                       		<div class="form-igroup">
+                                       			<label class="col-md-2 col-sm-2 control-label">联系邮箱</label>
+	                                           	<div class="col-md-4 col-sm-4">
+	                                           		<div class="input-icon right">
+	                                               		<input type="text" class="form-control" name="contactEmail" id="contactEmail" maxlength="50" value="" placeholder="请输入机构邮箱">
+	                                               	</div>
+	                                           </div>
+                                       		</div>
+                                       </div>
+                                       <div class="form-group">
+                                           <label class="col-md-2 control-label">描&emsp;&nbsp;&emsp;述</label>
+                                           <div class="col-md-10">
+                                           	<div class="input-icon right">
+                                               	<textarea class="form-control" name="description" id="description" rows="2" maxlength="200" id="description"></textarea>
+                                              </div>
+                                           </div>
+                                       </div>
+                               		</div> 
+                             	</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END EXAMPLE TABLE PORTLET-->
+	</div>
+</div>
+<!-- END PAGE BASE CONTENT -->
+<#include "/common/modal-del.html" />
+</@layout>

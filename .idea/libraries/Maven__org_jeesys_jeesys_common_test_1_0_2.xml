@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jeesys:jeesys-common-test:1.0.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jeesys/jeesys-common-test/1.0.2/jeesys-common-test-1.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jeesys/jeesys-common-test/1.0.2/jeesys-common-test-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jeesys/jeesys-common-test/1.0.2/jeesys-common-test-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

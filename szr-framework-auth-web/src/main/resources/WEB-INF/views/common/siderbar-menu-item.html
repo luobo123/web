@@ -1,0 +1,25 @@
+<#list userResources as rs>
+	<#assign selected=false />
+	<li class="nav-item  <#if selected> active open</#if>">
+		<#assign url="javascript:;" />
+		<#if (rs.children)?? && (rs.children?size == 0)>
+			<#assign url="${ctx}/${rs.url}" />
+		</#if>
+		<a href="${url}" class="nav-link nav-toggle"> 
+			<i class="${rs.icon}"></i>
+			<span class="title">${rs.name}</span>
+			<#if selected><span class="selected"></span></#if>
+			<#if (rs.children)?? && (rs.children?size gt 0)>
+				<span class="arrow <#if selected>open</#if>"></span>
+			</#if>
+		</a>
+		<#if !rs.lastLevel && ('${rs.type}'=='MENU')>
+			<#if (rs.children)?? && (rs.children?size gt 0)>
+				<ul class="sub-menu">
+					<#assign userResources=rs.children />
+					<#include "/common/siderbar-menu-item.html" />
+				</ul>
+			</#if>
+		</#if>
+	</li>
+</#list>

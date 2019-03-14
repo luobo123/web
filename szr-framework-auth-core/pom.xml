@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.szr.framework</groupId>
+		<artifactId>szr-framework-auth-parent</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<artifactId>szr-framework-auth-core</artifactId>
+	<packaging>jar</packaging>
+	<description>神州融通用基础框架权限core(dao、service)模块</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.szr.framework</groupId>
+			<artifactId>szr-framework-auth-model</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+	</dependencies>
+</project>

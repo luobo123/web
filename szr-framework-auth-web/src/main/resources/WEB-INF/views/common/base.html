@@ -1,0 +1,48 @@
+<#compress>
+<#assign ctx="${request.contextPath}" />
+<#assign resources="${ctx}/resources" />
+<#assign assets="${resources}/assets" />
+<#assign plugins="${assets}/global/plugins" />
+<#assign js="${resources}/js" />
+<#assign css="${resources}/css" />
+<#assign img="${resources}/img" />
+<#assign user=USER_KEY_IN_SESSION />
+<#assign servletContext=request.webApplicationContext.servletContext />
+<#assign userResources=USER_RESOURCE_KEY_IN_SESSION />
+<#-- 获取contextParam的值 -->
+<#macro contextParam paramName>${servletContext.getInitParameter(paramName)}</#macro>
+
+<#macro dicdata sdataname sdata>
+    <#compress>
+        <script>   
+            var ${sdataname} = [];
+            <#list sdata as data>
+                ${sdataname}.push({id:'${data.getItemKey()}',text:'${data.getItemValue()}'});
+            </#list>
+        </script>  
+    </#compress>
+</#macro>
+
+<#macro enumdata sdataname sdata>
+    <#compress>
+        <script>
+            var ${sdataname} = [];
+            <#list sdata as data>
+                ${sdataname}.push({id:'${data.name()}',text:'${data.getValue()}'});
+            </#list>
+        </script>  
+    </#compress>
+</#macro>
+
+<#macro selectdata sdataname sdata>
+    <#compress>
+        <script>   
+            var ${sdataname} = new Array();
+            <#list sdata as data>
+                ${sdataname}.push({id:'${data.getId()}',text:'${data.getText()}',data:'${data.getData()}'});
+            </#list>
+        </script>  
+    </#compress>
+</#macro>
+
+</#compress>

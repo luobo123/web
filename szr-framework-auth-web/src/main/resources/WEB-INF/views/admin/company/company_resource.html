@@ -1,0 +1,72 @@
+<#assign pluginArray="datatables,jstree,morris,validation,ArrayList,bootbox" />
+<#assign title="首页" />
+<#assign subTitle="公司资源管理" />
+<#assign extraJs="${resources}/admin/company/ini/company_resource.js" />
+<@layout pluginArray="${pluginArray}" title="${title}" subTitle="${subTitle}" extraJs="${extraJs}">
+<div class="row">
+	<div class="col-md-7">
+		<div class="portlet light bordered">
+			<div class="portlet-title">
+				<div class="caption">公司资源管理</div>
+			</div>
+			<div class="portlet-body">
+				<form class="form-horizontal" role="form" id="org_frm">
+					<div class="form-body">
+						<div class="form-group">
+							<div class="form-igroup">
+								<label class="col-md-2 control-label">公司名称</label>
+								<div class="col-md-4">
+									<input id="org_name_s" class="form-control" type="text" placeholder="公司名称" maxlength="255">
+								</div>
+							</div>
+							<div class="form-igroup">
+								<label class="col-md-2 control-label">公司编码</label>
+								<div class="col-md-4">
+	                                 <input id="org_code_s" class="form-control form-control-inline date-picker" size="16" type="text" placeholder="公司编码" />
+	                            </div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-igroup">
+								<div class="col-md-12" style="text-align: center;">
+									<button type="button" class="dt-button btn green btn-sm fa fa-search" id="btn_search">
+										查询
+									</button>
+									<button type="button" class="dt-button btn green btn-sm fa fa-refresh" id="btn_reset">
+										重置
+									</button>
+									<#include "${templatePath}/common/permission_spec.html" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="portlet box green">
+				<div class="portlet-title">
+					<div class="caption sub-caption">公司信息</div>				
+				</div>
+				<div class="portlet-body" style="border-bottom:0 none;padding-top:0;">
+					<table id="company_databable" class="table table-striped table-bordered table-hover table-responsive" >
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="portlet light bordered">
+			<div class="portlet-title">资源列表</div>
+			<div class="portlet-body">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12 resource_tree_table">
+						<div id="resource_tree"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- END PAGE BASE CONTENT -->
+<#include "${templatePath}/admin/company/fragments/company_modal.html" />
+<#include "${templatePath}/common/modal-del.html" />
+</@layout>

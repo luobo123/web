@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2017-11-10 11:50:19 v1.29
+CACHE:
+
+/uam-web-dev/resources/css/login.css
+
+NETWORK:
+*
+#FALLBACK:
+#/html5/ /uam-web/error
