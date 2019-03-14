@@ -53,6 +53,14 @@ public class AdminController extends BusinessController {
 		return "admin/index";
 	}
 
+	/**
+	 * 登入
+	 * @param redirectAttributes
+	 * @param user
+	 * @param remember
+	 * @return
+	 * @throws UnsupportedEncodingException
+	 */
 	@PostMapping(value = "/login", params = { "username", "password" })
 	public String login(RedirectAttributes redirectAttributes, @Valid User user, boolean remember)
 			throws UnsupportedEncodingException {
