@@ -56,7 +56,7 @@ public class AdminController extends BusinessController {
 	/**
 	 * 登入
 	 * @param redirectAttributes
-	 * @param user
+	 * @param user 用户名
 	 * @param remember
 	 * @return
 	 * @throws UnsupportedEncodingException
